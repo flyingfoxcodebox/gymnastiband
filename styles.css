@@ -1,0 +1,235 @@
+/*Universal Styles*/
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 100%;
+}
+
+@media (max-width: 769px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: "Oswald", serif;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(131, 0, 175);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/*Headings*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0.5rem 0;
+}
+
+h1 {
+  font-family: "Luckiest Guy", serif;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: rgb(84, 0, 112);
+  text-align: center;
+  font-weight: 100;
+}
+
+h2 {
+  font-family: "Oswald", serif;
+  text-shadow: 1px 1px 2px yellow;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Oswald," serif;
+  color: red;
+}
+
+h4,
+h5 {
+  font-family: Georgia, sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+
+/*Links so they don't appear all purple and stupid inside the navbar and footer*/
+.navbar,
+.footer {
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar a,
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:visited,
+.footer a:visited {
+  color: white;
+}
+
+.navbar a:hover,
+.footer a:hover,
+.navbar a:focus,
+.footer a:focus {
+  color: white;
+  opacity: 0.9;
+}
+
+.navbar a:active,
+.footer a:active {
+  color: white;
+}
+
+/*Button Styling because plain HTML is gross*/
+button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(227, 16, 206);
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(221, 160, 221);
+  color: black;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: rgb(200, 130, 200);
+  transform: scale(0.98);
+}
+
+/*Navbar*/
+.navbar {
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 6rem;
+  z-index: 10;
+}
+
+.nav-item {
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+
+/*Header*/
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 15rem 15rem 10rem; /*added bottom padding because I don't like the bottom of the photo*/
+  background-image: url(public/banner-photo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Mission*/
+.mission {
+  background-color: rgb(35, 0, 91);
+  padding: 10rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Gallery*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat (3, 1fr);
+  gap: 1rem;
+  height: auto;
+}
+
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 4rem;
+}
+
+.gallery-item img {
+  width: 85%;
+  max-height: 20rem;
+  min-height: 20rem;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/*Testimonial*/
+.testimonial {
+  padding: 6rem 2rem;
+}
+/*CTA*/
+.cta {
+  background-color: rgb(35, 0, 91);
+  padding: 10rem 5rem;
+}
+/*Footer*/
+.footer {
+  background-color: black;
+  margin-bottom: 0%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem 2rem;
+}
+
+/* trying to write a media query */
+@media only screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+}
